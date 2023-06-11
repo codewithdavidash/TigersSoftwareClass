@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block title %}Home | {% endblock %}
+{% block content %}
+<form action="" method="post">
+     {% csrf_token %}
+     {{ form.name.label }}: <br>
+     {{ form.name }} <br>
+     {{ form.video_link.label }}: <br>
+     {{ form.video_link }} <br>
+     {{ form.notes.label }}: <br>
+     {{ form.notes }} <br>
+     <button type="submit">Add</button>
+</form>
+
+<a href="/add/"><button style="background-color: navy; border: 2px solid navy; color: gold;">&leftarrow;BACK</button></a>
+{% endblock %}

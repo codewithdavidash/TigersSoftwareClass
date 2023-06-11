@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+
+{% block title %}Admin's Page | {% endblock %}
+{% block content %}
+{% if request.user.is_authenticated %}
+{% if request.user.is_staff %}
+<br>
+<a href="/add_html_video/"><button>Add HTML videos</button></a><h6>&uparrow;Click here to add HTML videos</h6>
+<br><a href="/add_css_video/"><button>Add CSS videos</button></a><h6>&uparrow;Click here to add CSS videos</h6>
+<br><a href="/add_js_video/"><button>Add JavaScript videos</button></a><h6>&uparrow;Click here to add JavaScript videos</h6>
+<br><a href="/add_python_video/"><button>Add Python videos</button></a><h6>&uparrow;Click here to add Python videos</h6>
+
+<a href="/"><button style="background-color: navy; border: 2px solid navy; color: gold;">&leftarrow;BACK</button></a>
+{% else %}
+<br>
+<a href="malito:wisdompaul273@gmail.com" target="_blank"><button>SUBMIT</button></a><h6>&uparrow;Click here to submit HTML Assignment(s)</h6>
+<br><a href="malito:wisdompaul273@gmail.com" target="_blank"><button>SUBMIT</button></a><h6>&uparrow;Click here to submit CSS Assignment(s)</h6>
+<br><a href="malito:tonadefisayomi@gmail.com" target="_blank"><button>SUBMIT</button></a><h6>&uparrow;Click here to submit JavaScript Assignment(s)</h6>
+<br><a href="malito:ashafokedavid@gmail.com" target="_blank"><button>SUBMIT</button></a><h6>&uparrow;Click here to submit Python Assignment(s)</h6>
+<a href="/"><button style="background-color: navy; border: 2px solid navy; color: gold;">&leftarrow;BACK</button></a>
+
+{% endif %}
+{% else %}
+<a href="/info/" class="nav-link">Info</a>
+{% endif %}
+{% endblock %}

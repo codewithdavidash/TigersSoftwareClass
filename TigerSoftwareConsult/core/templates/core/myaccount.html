@@ -1,0 +1,11 @@
+{% extends "core/base.html" %}
+
+{% block title %}Account Settings | {% endblock %}
+{% block content %}
+<h3>Account Settings</h3>
+<hr>
+<h4>Change Password for "{{ user }}": </h4>
+<a href="/change_password/"><button type="submit">Change</button></a>
+<h4>Logout user:"{{ user }}"</h4>
+<a href="/logout/"><button type="submit">Logout</button></a>
+{% endblock %}

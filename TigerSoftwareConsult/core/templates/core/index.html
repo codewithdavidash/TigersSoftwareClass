@@ -1,0 +1,81 @@
+{% extends "core/base.html" %}
+
+{% block title %}Admin's Page | {% endblock %}
+{% block content %}
+<figure>
+     <h3 id="html">HTML</h3>
+     <details open><summary><hr></summary>
+          {% for items in html  %}
+          <img src="{{ items.image.url }}" height="60" width="80" class="course-image"><br>
+          <a href="{{items.video_link}}" style="text-decoration: none;"><h3>{{ items.name }} - {{ items.date|timesince }} ago</h3></a>
+          <details open>
+               <summary>Comments: <br></summary>
+               <div class="comment">
+               {% for comments in htmlcomment %}
+               <div class="comments">
+                    <p><sub>{{ comments.name }} <br>{{ comments.comment }}  -  {{ comments.date }} <br><br></sub></p>
+               </div>
+               {% endfor %}     
+               </div>
+               <a href="/html_comments/"><button>Add A Comment On This HTML Video</button></a>
+          </details>
+     {% endfor %}
+     </details>
+     <h3 is="css">CSS</h3>
+     <details open><summary><hr></summary>
+          {% for items in css  %}
+          <img src="{{ items.image.url }}" height="60" width="50" class="course-image"><br>
+          <a href="{{items.video_link}}" style="text-decoration: none;"><h3>{{ items.name }} - {{ items.date|timesince }} ago</h3></a>
+          <details>
+               <summary>Comments: <br></summary>
+               <div class="comment">
+               {% for comments in csscomment %}
+               <div class="comments">
+                    <p><sub>{{ comments.name }} <br>{{ comments.comment }}  -  {{ comments.date }}</sub></p>
+               </div>
+               {% endfor %}     
+               </div>
+               <a href="/css_comments/"><button>Add A Comment On This HTML Video</button></a>
+          </details>
+     {% endfor %}
+     </details>
+     <h3 id="js">JAVASCRIPT</h3>
+     <details open><summary><hr></summary>
+          {% for items in js  %}
+          <img src="{{ items.image.url }}" height="60" width="80" class="course-image"><br>
+          <a href="{{items.video_link}}" style="text-decoration: none;"><h3>{{ items.name }} - {{ items.date|timesince }} ago</h3></a>
+          <details>
+               <summary>Comments: <br></summary>
+               <div class="comment">
+               {% for comments in jscomment %}
+               <div class="comments">
+                    <p><sub>{{ comments.name }} <br>{{ comments.comment }}  -  {{ comments.date }}</sub></p>
+               </div>
+               {% endfor %}     
+               </div>
+               <a href="/js_comments/"><button>Add A Comment On This HTML Video</button></a>
+          </details>
+     {% endfor %}
+     </details>
+     <h3 id="python">PYTHON</h3>
+     <details open><summary><hr></summary>
+          {% for items in python  %}
+          <img src="{{ items.image.url }}" height="60" width="80" class="course-image"><br>
+          <a href="{{items.video_link}}" style="text-decoration: none;"><h3>{{ items.name }} - {{ items.date|timesince }} ago</h3></a>
+          <details>
+               <summary>Comments: <br></summary>
+               <div class="comment">
+               {% for comments in pythoncomment %}
+               <div class="comments">
+                    <p><sub>{{ comments.name }} <br>{{ comments.comment }}  -  {{ comments.date }}</sub></p>
+               </div>
+               {% endfor %}     
+               </div>
+               <a href="/python_comments/"><button>Add A Comment On This Python Video</button></a>
+          </details>
+     {% endfor %}
+     </details>
+</figure>
+<br><br><br>
+<a href="/add/">Click here to submit your assigments</a>
+{% endblock %}
